@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>音频录制与语音识别</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>音频录制与语音识别</h1>
+        
+        <div class="controls">
+            <button id="startRecord" class="btn btn-primary">开始录制</button>
+            <button id="stopRecord" class="btn btn-danger" disabled>停止录制</button>
+            <button id="recognizeBtn" class="btn btn-success" disabled>语音识别</button>
+        </div>
+        
+        <div class="status">
+            <p id="status">准备就绪</p>
+            <p id="timer" class="timer">00:00</p>
+        </div>
+        
+        <div class="audio-player" id="audioPlayer" style="display: none;">
+            <h3>录制的音频:</h3>
+            <audio id="recordedAudio" controls></audio>
+        </div>
+        
+        <div class="result" id="resultSection" style="display: none;">
+            <h3>识别结果:</h3>
+            <div id="recognitionResult" class="result-box"></div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
