@@ -90,7 +90,7 @@ print(completion.choices[0].message.content)
 
 # client = OpenAI(
 #     # 若没有配置环境变量，请用阿里云百炼API Key将下行替换为：api_key="sk-xxx",
-#     api_key="sk-2272144c861f44ea9a37c2868e07ba84",
+#     api_key=os.getenv("DASHSCOPE_API_KEY"),
 #     base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
 # )
 

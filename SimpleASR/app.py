@@ -14,7 +14,7 @@ if not os.path.exists(app.config['CACHE_FOLDER']):
 
 # 初始化OpenAI客户端（请替换为你的API配置）
 client = openai.OpenAI(
-    api_key="sk-2272144c861f44ea9a37c2868e07ba84",
+    api_key=os.getenv("DASHSCOPE_API_KEY"),
     base_url="https://dashscope.aliyuncs.com/compatible-mode/v1"  # 如果需要自定义API端点
 )
 
