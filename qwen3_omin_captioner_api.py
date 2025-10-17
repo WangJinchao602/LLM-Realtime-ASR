@@ -34,7 +34,7 @@ def encode_audio(audio_path):
 
 
 # 请将 ABSOLUTE_PATH/welcome.mp3 替换为本地音频的绝对路径
-audio_file_path = "xxx/ABSOLUTE_PATH/welcome.mp3"
+audio_file_path = "E:\LMStydy\LLM-Realtime-ASR\装修噪音.wav"
 base64_audio = encode_audio(audio_file_path)
 
 completion = client.chat.completions.create(
