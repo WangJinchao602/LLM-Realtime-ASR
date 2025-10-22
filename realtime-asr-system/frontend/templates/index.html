@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>系统音频实时识别</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>系统音频实时识别系统</h1>
+            <p>基于 Qwen3 模型的系统声音实时转文字服务</p>
+        </header>
+
+        <main>
+            <div class="control-panel">
+                <button id="startRecord" class="btn btn-primary">
+                    <span class="icon">🔊</span> 开始系统音频
+                </button>
+                <button id="stopRecord" class="btn btn-danger" disabled>
+                    <span class="icon">⏹️</span> 停止系统音频
+                </button>
+                <button id="clearText" class="btn btn-secondary">
+                    <span class="icon">🗑️</span> 清空文本
+                </button>
+                <div class="status-indicator">
+                    <span id="statusIndicator" class="indicator offline"></span>
+                    <span id="statusText">未连接</span>
+                </div>
+            </div>
+
+            <div class="status-card">
+                <h3>系统状态</h3>
+                <div class="status-content">
+                    <div class="status-item">
+                        <label>连接状态:</label>
+                        <span id="connectionStatus">等待连接...</span>
+                    </div>
+                    <div class="status-item">
+                        <label>录制时间:</label>
+                        <span id="recordingTimer">00:00</span>
+                    </div>
+                    <div class="status-item">
+                        <label>处理延迟:</label>
+                        <span id="processingDelay">-</span>
+                    </div>
+                    <div class="status-item">
+                        <label>音频源:</label>
+                        <span id="audioSource">系统扬声器</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="audio-info">
+                <h3>音频信息</h3>
+                <div class="info-content">
+                    <div class="info-item">
+                        <label>采样率:</label>
+                        <span>16kHz</span>
+                    </div>
+                    <div class="info-item">
+                        <label>缓冲区:</label>
+                        <span>2秒</span>
+                    </div>
+                    <div class="info-item">
+                        <label>音频格式:</label>
+                        <span>16位 PCM</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="results-panel">
+                <div class="panel-header">
+                    <h3>识别结果</h3>
+                    <div class="result-stats">
+                        <span id="resultCount">0 条结果</span>
+                        <span id="lastUpdate">-</span>
+                    </div>
+                </div>
+                <div id="transcriptResults" class="transcript-results">
+                    <div class="empty-state">
+                        <p>系统音频识别结果将显示在这里...</p>
+                        <p class="empty-hint">点击"开始系统音频"按钮开始捕获系统声音</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 系统音频实时识别系统 | 基于 Qwen3 模型 | 专用于系统声音识别</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>实时语音识别</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        #status { padding: 10px; margin: 10px 0; border-radius: 5px; }
+        #transcript { min-height: 100px; border: 1px solid #ddd; padding: 10px; margin: 10px 0; }
+        button { padding: 10px 20px; margin: 5px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>实时语音识别演示</h1>
+    <div id="status">等待连接...</div>
+    <button id="startBtn">开始录音</button>
+    <button id="stopBtn" disabled>停止录音</button>
+    <div id="transcript">识别结果将显示在这里...</div>
+
+    <script>
+        const statusDiv = document.getElementById('status');
+        const startBtn = document.getElementById('startBtn');
+        const stopBtn = document.getElementById('stopBtn');
+        const transcriptDiv = document.getElementById('transcript');
+        
+        let socket = null;
+        let mediaRecorder = null;
+        let audioChunks = [];
+        
+        // 初始化WebSocket连接
+        function initWebSocket() {
+            // 注意：这里需要修改为您的后端WebSocket服务器地址
+            socket = new WebSocket('ws://localhost:8765');
+            
+            socket.onopen = () => {
+                statusDiv.textContent = '已连接到服务器';
+                statusDiv.style.backgroundColor = '#d4edda';
+                startBtn.disabled = false;
+            };
+            
+            socket.onmessage = (event) => {
+                const data = JSON.parse(event.data);
+                if (data.type === 'transcript') {
+                    transcriptDiv.textContent = data.text;
+                } else if (data.type === 'error') {
+                    statusDiv.textContent = `错误: ${data.message}`;
+                    statusDiv.style.backgroundColor = '#f8d7da';
+                }
+            };
+            
+            socket.onclose = () => {
+                statusDiv.textContent = '与服务器的连接已关闭';
+                statusDiv.style.backgroundColor = '#f8d7da';
+                startBtn.disabled = true;
+                stopBtn.disabled = true;
+            };
+            
+            socket.onerror = (error) => {
+                statusDiv.textContent = `连接错误: ${error}`;
+                statusDiv.style.backgroundColor = '#f8d7da';
+            };
+        }
+        
+        // 开始录音
+        async function startRecording() {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+                mediaRecorder = new MediaRecorder(stream);
+                audioChunks = [];
+                
+                mediaRecorder.ondataavailable = (event) => {
+                    if (event.data.size > 0) {
+                        audioChunks.push(event.data);
+                        // 实时发送音频数据到服务器
+                        if (socket && socket.readyState === WebSocket.OPEN) {
+                            const reader = new FileReader();
+                            reader.onload = () => {
+                                const base64Audio = reader.result.split(',')[1];
+                                socket.send(JSON.stringify({
+                                    type: 'audio',
+                                    data: base64Audio
+                                }));
+                            };
+                            reader.readAsDataURL(event.data);
+                        }
+                    }
+                };
+                
+                mediaRecorder.start(100); // 每100ms发送一次数据
+                statusDiv.textContent = '正在录音...';
+                statusDiv.style.backgroundColor = '#fff3cd';
+                startBtn.disabled = true;
+                stopBtn.disabled = false;
+            } catch (error) {
+                statusDiv.textContent = `录音错误: ${error}`;
+                statusDiv.style.backgroundColor = '#f8d7da';
+            }
+        }
+        
+        // 停止录音
+        function stopRecording() {
+            if (mediaRecorder && mediaRecorder.state !== 'inactive') {
+                mediaRecorder.stop();
+                statusDiv.textContent = '录音已停止';
+                statusDiv.style.backgroundColor = '#d4edda';
+                startBtn.disabled = false;
+                stopBtn.disabled = true;
+            }
+        }
+        
+        // 绑定按钮事件
+        startBtn.addEventListener('click', startRecording);
+        stopBtn.addEventListener('click', stopRecording);
+        
+        // 页面加载时初始化WebSocket
+        window.addEventListener('load', initWebSocket);
+    </script>
+</body>
+</html>
