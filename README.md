@@ -20,8 +20,8 @@
 2. 无法输入提示词，只能对音频进行分析，而非识别。识别模型为Qwen3-Omni需要自己部署,这里仅做测试。
 3. 后续会出Qwen3-Omni如何本地部署及调用API的详细教程。
 
-
-**2025-10-22更新：realtime-asr-system**
+## realtime-asr-system
+**2025-10-22更新**
 增加realtime-asr-system项目
 项目简介：实时铺货系统扬声器声音调用Qwen3-Omni-captioner进行实时ASR
 1. 启动流程：用户访问网页 → Flask服务前端页面 → 建立WebSocket连接 → 准备就绪
