@@ -20,10 +20,12 @@
 2. 无法输入提示词，只能对音频进行分析，而非识别。识别模型为Qwen3-Omni需要自己部署,这里仅做测试。
 3. 后续会出Qwen3-Omni如何本地部署及调用API的详细教程。
 
-## realtime-asr-system
+## realtime-asr-system-local
 **2025-10-22更新**
 增加realtime-asr-system项目
+
 项目简介：实时铺货系统扬声器声音调用Qwen3-Omni-captioner进行实时ASR
+
 1. 启动流程：用户访问网页 → Flask服务前端页面 → 建立WebSocket连接 → 准备就绪
 2. 音频录制流程：用户点击开始录制 → 前端发送start_system_audio → WebSocket服务器接收命令 → 
 启动SystemAudioService → 开始捕获系统音频 → 实时处理音频数据
@@ -32,6 +34,7 @@ Qwen3模型识别语音 → 返回识别结果 → 通过WebSocket发送给前�
 
 **核心模块**
 SystemAudioService（系统音频服务）
+
 ✅ 捕获系统扬声器音频（环回录制）
 
 ✅ 实时音频重采样（44.1kHz → 16kHz）
@@ -45,6 +48,14 @@ SystemAudioService（系统音频服务）
 ✅ WebSocket通信
 
 
+## realtime-asr-system-split
+**2025-10-24更新**
 
+说明：对realtime-asr-system项目进行拆分，将前端以及音频捕获后端与ASR服务端进行拆分。前端以及音频捕获后端可以部署在本地运行，ASR服务端可以部署在服务器运行。整体采用Client-Server架构。
+1. 前端 --websocket--> 本地客户端WebSocket --websocket--> 服务端WebSocket
+
+2. 服务器WebSocket → ASR服务 → 识别结果
+
+3. 识别结果 → 服务器WebSocket → 本地客户端WebSocket → 前端
 
 

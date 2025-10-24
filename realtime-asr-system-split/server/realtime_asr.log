@@ -1,0 +1,52 @@
+2025-10-24 09:29:33,045 - backend.asr_service - INFO - Qwen ASR 服务初始化成功
+2025-10-24 10:18:23,363 - backend.asr_service - INFO - Qwen ASR 服务初始化成功
+2025-10-24 10:18:23,365 - __main__ - INFO - 正在启动语音识别服务器...
+2025-10-24 10:18:23,366 - backend.websocket_server - INFO - 启动 WebSocket ASR 服务器在 0.0.0.0:8766
+2025-10-24 10:18:23,413 - websockets.server - INFO - server listening on 0.0.0.0:8766
+2025-10-24 10:18:23,414 - backend.websocket_server - INFO - WebSocket ASR 服务器已启动，等待音频流连接...
+2025-10-24 10:41:42,116 - websockets.server - INFO - server closing
+2025-10-24 10:41:42,122 - websockets.server - INFO - server closed
+2025-10-24 10:41:42,128 - __main__ - INFO - 收到中断信号，正在关闭服务器...
+2025-10-24 10:41:42,129 - __main__ - INFO - 服务器已关闭
+2025-10-24 10:41:45,387 - backend.asr_service - INFO - Qwen ASR 服务初始化成功
+2025-10-24 10:41:45,388 - __main__ - INFO - 正在启动语音识别服务器...
+2025-10-24 10:41:45,390 - backend.websocket_server - INFO - 启动 WebSocket ASR 服务器在 0.0.0.0:8766
+2025-10-24 10:41:45,428 - websockets.server - INFO - server listening on 0.0.0.0:8766
+2025-10-24 10:41:45,429 - backend.websocket_server - INFO - WebSocket ASR 服务器已启动，等待音频流连接...
+2025-10-24 10:45:06,730 - websockets.server - INFO - connection open
+2025-10-24 10:45:06,730 - backend.websocket_server - INFO - 客户端连接: 127.0.0.1:52393, 当前连接数: 1
+2025-10-24 10:45:10,960 - backend.websocket_server - INFO - 客户端 127.0.0.1:52393 开始音频流传输
+2025-10-24 10:45:13,041 - websockets.server - INFO - connection open
+2025-10-24 10:45:13,041 - backend.websocket_server - INFO - 客户端连接: 127.0.0.1:52416, 当前连接数: 2
+2025-10-24 10:45:13,042 - backend.websocket_server - INFO - 客户端 127.0.0.1:52416 开始音频流传输
+2025-10-24 10:45:41,488 - backend.websocket_server - INFO - 客户端 127.0.0.1:52416 停止音频流传输
+2025-10-24 10:45:41,491 - backend.websocket_server - INFO - 客户端 127.0.0.1:52393 停止音频流传输
+2025-10-24 10:45:53,081 - backend.websocket_server - INFO - 客户端断开连接: 127.0.0.1:52416
+2025-10-24 10:45:53,081 - backend.websocket_server - INFO - 客户端清理完成: 127.0.0.1:52416, 剩余连接数: 1
+2025-10-24 10:46:31,913 - backend.websocket_server - INFO - 客户端清理完成: 127.0.0.1:52393, 剩余连接数: 0
+2025-10-24 10:46:31,977 - websockets.server - INFO - connection open
+2025-10-24 10:46:31,978 - backend.websocket_server - INFO - 客户端连接: 127.0.0.1:52557, 当前连接数: 1
+2025-10-24 10:46:32,763 - backend.websocket_server - INFO - 客户端 127.0.0.1:52557 开始音频流传输
+2025-10-24 11:27:00,805 - backend.websocket_server - INFO - 客户端清理完成: 127.0.0.1:52557, 剩余连接数: 0
+2025-10-24 11:30:32,236 - websockets.server - INFO - connection open
+2025-10-24 11:30:32,238 - backend.websocket_server - INFO - 客户端连接: 127.0.0.1:56277, 当前连接数: 1
+2025-10-24 11:30:33,290 - backend.websocket_server - INFO - 客户端 127.0.0.1:56277 开始音频流传输
+2025-10-24 11:30:35,378 - websockets.server - INFO - connection open
+2025-10-24 11:30:35,379 - backend.websocket_server - INFO - 客户端连接: 127.0.0.1:56287, 当前连接数: 2
+2025-10-24 11:30:35,381 - backend.websocket_server - INFO - 客户端 127.0.0.1:56287 开始音频流传输
+2025-10-24 11:31:15,402 - backend.websocket_server - INFO - 客户端断开连接: 127.0.0.1:56287
+2025-10-24 11:31:15,402 - backend.websocket_server - INFO - 客户端清理完成: 127.0.0.1:56287, 剩余连接数: 1
+2025-10-24 11:38:49,498 - backend.websocket_server - INFO - 客户端清理完成: 127.0.0.1:56277, 剩余连接数: 0
+2025-10-24 11:38:49,660 - websockets.server - INFO - connection open
+2025-10-24 11:38:49,661 - backend.websocket_server - INFO - 客户端连接: 127.0.0.1:57282, 当前连接数: 1
+2025-10-24 11:38:53,208 - backend.websocket_server - INFO - 客户端 127.0.0.1:57282 开始音频流传输
+2025-10-24 11:38:55,278 - websockets.server - INFO - connection open
+2025-10-24 11:38:55,279 - backend.websocket_server - INFO - 客户端连接: 127.0.0.1:57296, 当前连接数: 2
+2025-10-24 11:38:55,280 - backend.websocket_server - INFO - 客户端 127.0.0.1:57296 开始音频流传输
+2025-10-24 11:39:35,255 - backend.websocket_server - INFO - 客户端断开连接: 127.0.0.1:57296
+2025-10-24 11:39:35,255 - backend.websocket_server - INFO - 客户端清理完成: 127.0.0.1:57296, 剩余连接数: 1
+2025-10-24 11:53:02,505 - backend.websocket_server - INFO - 客户端清理完成: 127.0.0.1:57282, 剩余连接数: 0
+2025-10-24 12:37:00,129 - websockets.server - INFO - server closing
+2025-10-24 12:37:00,132 - websockets.server - INFO - server closed
+2025-10-24 12:37:00,140 - __main__ - INFO - 收到中断信号，正在关闭服务器...
+2025-10-24 12:37:00,141 - __main__ - INFO - 服务器已关闭

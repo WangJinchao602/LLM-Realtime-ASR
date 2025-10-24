@@ -1,0 +1,324 @@
+2025-10-24 10:27:50,819 - __main__ - INFO - 正在启动语音识别客户端...
+2025-10-24 10:27:50,888 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:5000
+2025-10-24 10:27:50,889 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-10-24 10:27:50,892 - werkzeug - INFO -  * Restarting with stat
+2025-10-24 10:27:51,292 - __main__ - INFO - 正在启动语音识别客户端...
+2025-10-24 10:27:51,319 - werkzeug - WARNING -  * Debugger is active!
+2025-10-24 10:27:51,328 - werkzeug - INFO -  * Debugger PIN: 695-787-789
+2025-10-24 10:27:55,115 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:27:55] "GET /frontend/style.css HTTP/1.1" 200 -
+2025-10-24 10:27:59,942 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:27:59] "GET / HTTP/1.1" 200 -
+2025-10-24 10:27:59,996 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:27:59] "[33mGET /frontend/css/style.css HTTP/1.1[0m" 404 -
+2025-10-24 10:27:59,999 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:27:59] "[33mGET /frontend/js/app.js HTTP/1.1[0m" 404 -
+2025-10-24 10:28:01,356 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:28:01] "GET / HTTP/1.1" 200 -
+2025-10-24 10:28:01,400 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:28:01] "[33mGET /frontend/css/style.css HTTP/1.1[0m" 404 -
+2025-10-24 10:28:01,404 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:28:01] "[33mGET /frontend/js/app.js HTTP/1.1[0m" 404 -
+2025-10-24 10:28:02,072 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:28:02] "GET / HTTP/1.1" 200 -
+2025-10-24 10:28:02,115 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:28:02] "[33mGET /frontend/css/style.css HTTP/1.1[0m" 404 -
+2025-10-24 10:28:02,119 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:28:02] "[33mGET /frontend/js/app.js HTTP/1.1[0m" 404 -
+2025-10-24 10:28:02,541 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:28:02] "GET / HTTP/1.1" 200 -
+2025-10-24 10:28:02,583 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:28:02] "[33mGET /frontend/css/style.css HTTP/1.1[0m" 404 -
+2025-10-24 10:28:02,591 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:28:02] "[33mGET /frontend/js/app.js HTTP/1.1[0m" 404 -
+2025-10-24 10:28:02,726 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:28:02] "GET / HTTP/1.1" 200 -
+2025-10-24 10:28:02,778 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:28:02] "[33mGET /frontend/css/style.css HTTP/1.1[0m" 404 -
+2025-10-24 10:28:02,780 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:28:02] "[33mGET /frontend/js/app.js HTTP/1.1[0m" 404 -
+2025-10-24 10:28:02,919 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:28:02] "GET / HTTP/1.1" 200 -
+2025-10-24 10:28:02,960 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:28:02] "[33mGET /frontend/css/style.css HTTP/1.1[0m" 404 -
+2025-10-24 10:28:02,963 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:28:02] "[33mGET /frontend/js/app.js HTTP/1.1[0m" 404 -
+2025-10-24 10:28:03,102 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:28:03] "GET / HTTP/1.1" 200 -
+2025-10-24 10:28:03,145 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:28:03] "[33mGET /frontend/css/style.css HTTP/1.1[0m" 404 -
+2025-10-24 10:28:03,148 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:28:03] "[33mGET /frontend/js/app.js HTTP/1.1[0m" 404 -
+2025-10-24 10:28:03,272 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:28:03] "GET / HTTP/1.1" 200 -
+2025-10-24 10:28:03,309 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:28:03] "[33mGET /frontend/css/style.css HTTP/1.1[0m" 404 -
+2025-10-24 10:28:03,322 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:28:03] "[33mGET /frontend/js/app.js HTTP/1.1[0m" 404 -
+2025-10-24 10:28:18,707 - __main__ - INFO - 客户端已关闭
+2025-10-24 10:28:18,763 - __main__ - INFO - 客户端已关闭
+2025-10-24 10:28:20,506 - __main__ - INFO - 正在启动语音识别客户端...
+2025-10-24 10:28:20,550 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:5000
+2025-10-24 10:28:20,551 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-10-24 10:28:20,553 - werkzeug - INFO -  * Restarting with stat
+2025-10-24 10:28:20,911 - __main__ - INFO - 正在启动语音识别客户端...
+2025-10-24 10:28:20,938 - werkzeug - WARNING -  * Debugger is active!
+2025-10-24 10:28:20,944 - werkzeug - INFO -  * Debugger PIN: 695-787-789
+2025-10-24 10:28:24,378 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:28:24] "GET / HTTP/1.1" 200 -
+2025-10-24 10:28:24,431 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:28:24] "[33mGET /frontend/js/app.js HTTP/1.1[0m" 404 -
+2025-10-24 10:28:24,508 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:28:24] "[36mGET /frontend/style.css HTTP/1.1[0m" 304 -
+2025-10-24 10:33:39,760 - werkzeug - INFO -  * Detected change in 'E:\\LMStydy\\LLM-Realtime-ASR\\realtime-asr-system-split\\client\\backend\\app.py', reloading
+2025-10-24 10:33:39,761 - __main__ - INFO - 客户端已关闭
+2025-10-24 10:33:39,818 - werkzeug - INFO -  * Restarting with stat
+2025-10-24 10:33:40,373 - __main__ - INFO - 客户端已关闭
+2025-10-24 10:41:35,831 - __main__ - INFO - 正在启动语音识别客户端...
+2025-10-24 10:41:35,927 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:5000
+2025-10-24 10:41:35,929 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-10-24 10:41:35,932 - werkzeug - INFO -  * Restarting with stat
+2025-10-24 10:41:36,627 - __main__ - INFO - 正在启动语音识别客户端...
+2025-10-24 10:41:36,655 - werkzeug - WARNING -  * Debugger is active!
+2025-10-24 10:41:36,663 - werkzeug - INFO -  * Debugger PIN: 695-787-789
+2025-10-24 10:41:53,629 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:41:53] "GET / HTTP/1.1" 200 -
+2025-10-24 10:41:53,690 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:41:53] "[33mGET /frontend/js/app.js HTTP/1.1[0m" 404 -
+2025-10-24 10:41:53,762 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:41:53] "[36mGET /frontend/style.css HTTP/1.1[0m" 304 -
+2025-10-24 10:41:54,823 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:41:54] "GET / HTTP/1.1" 200 -
+2025-10-24 10:41:54,877 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:41:54] "[33mGET /frontend/js/app.js HTTP/1.1[0m" 404 -
+2025-10-24 10:41:54,878 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:41:54] "[36mGET /frontend/style.css HTTP/1.1[0m" 304 -
+2025-10-24 10:43:22,319 - __main__ - INFO - 客户端已关闭
+2025-10-24 10:43:22,383 - __main__ - INFO - 客户端已关闭
+2025-10-24 10:43:24,187 - __main__ - INFO - 正在启动语音识别客户端...
+2025-10-24 10:43:24,232 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:5000
+2025-10-24 10:43:24,232 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-10-24 10:43:24,235 - werkzeug - INFO -  * Restarting with stat
+2025-10-24 10:43:24,871 - __main__ - INFO - 正在启动语音识别客户端...
+2025-10-24 10:43:24,897 - werkzeug - WARNING -  * Debugger is active!
+2025-10-24 10:43:24,903 - werkzeug - INFO -  * Debugger PIN: 695-787-789
+2025-10-24 10:43:31,801 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:43:31] "GET / HTTP/1.1" 200 -
+2025-10-24 10:43:31,850 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:43:31] "[33mGET /frontend/js/app.js HTTP/1.1[0m" 404 -
+2025-10-24 10:43:31,923 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:43:31] "[36mGET /frontend/style.css HTTP/1.1[0m" 304 -
+2025-10-24 10:43:33,003 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:43:33] "GET / HTTP/1.1" 200 -
+2025-10-24 10:43:33,046 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:43:33] "[36mGET /frontend/style.css HTTP/1.1[0m" 304 -
+2025-10-24 10:43:33,049 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:43:33] "[33mGET /frontend/js/app.js HTTP/1.1[0m" 404 -
+2025-10-24 10:43:33,685 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:43:33] "GET / HTTP/1.1" 200 -
+2025-10-24 10:43:33,740 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:43:33] "[33mGET /frontend/js/app.js HTTP/1.1[0m" 404 -
+2025-10-24 10:43:33,740 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:43:33] "[36mGET /frontend/style.css HTTP/1.1[0m" 304 -
+2025-10-24 10:43:33,875 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:43:33] "GET / HTTP/1.1" 200 -
+2025-10-24 10:43:33,921 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:43:33] "[33mGET /frontend/js/app.js HTTP/1.1[0m" 404 -
+2025-10-24 10:43:33,921 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:43:33] "[36mGET /frontend/style.css HTTP/1.1[0m" 304 -
+2025-10-24 10:43:34,055 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:43:34] "GET / HTTP/1.1" 200 -
+2025-10-24 10:43:34,098 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:43:34] "[33mGET /frontend/js/app.js HTTP/1.1[0m" 404 -
+2025-10-24 10:43:34,098 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:43:34] "[36mGET /frontend/style.css HTTP/1.1[0m" 304 -
+2025-10-24 10:43:34,236 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:43:34] "GET / HTTP/1.1" 200 -
+2025-10-24 10:43:34,277 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:43:34] "[33mGET /frontend/js/app.js HTTP/1.1[0m" 404 -
+2025-10-24 10:43:34,277 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:43:34] "[36mGET /frontend/style.css HTTP/1.1[0m" 304 -
+2025-10-24 10:43:34,402 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:43:34] "GET / HTTP/1.1" 200 -
+2025-10-24 10:43:34,448 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:43:34] "[33mGET /frontend/js/app.js HTTP/1.1[0m" 404 -
+2025-10-24 10:43:34,450 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:43:34] "[36mGET /frontend/style.css HTTP/1.1[0m" 304 -
+2025-10-24 10:43:34,576 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:43:34] "GET / HTTP/1.1" 200 -
+2025-10-24 10:43:34,628 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:43:34] "[36mGET /frontend/style.css HTTP/1.1[0m" 304 -
+2025-10-24 10:43:34,631 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:43:34] "[33mGET /frontend/js/app.js HTTP/1.1[0m" 404 -
+2025-10-24 10:43:34,726 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:43:34] "GET / HTTP/1.1" 200 -
+2025-10-24 10:43:34,777 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:43:34] "[33mGET /frontend/js/app.js HTTP/1.1[0m" 404 -
+2025-10-24 10:43:34,777 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:43:34] "[36mGET /frontend/style.css HTTP/1.1[0m" 304 -
+2025-10-24 10:43:34,905 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:43:34] "GET / HTTP/1.1" 200 -
+2025-10-24 10:43:34,952 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:43:34] "[33mGET /frontend/js/app.js HTTP/1.1[0m" 404 -
+2025-10-24 10:43:34,953 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:43:34] "[36mGET /frontend/style.css HTTP/1.1[0m" 304 -
+2025-10-24 10:43:35,058 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:43:35] "GET / HTTP/1.1" 200 -
+2025-10-24 10:43:35,105 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:43:35] "[33mGET /frontend/js/app.js HTTP/1.1[0m" 404 -
+2025-10-24 10:43:35,105 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:43:35] "[36mGET /frontend/style.css HTTP/1.1[0m" 304 -
+2025-10-24 10:43:35,206 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:43:35] "GET / HTTP/1.1" 200 -
+2025-10-24 10:43:35,246 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:43:35] "[33mGET /frontend/js/app.js HTTP/1.1[0m" 404 -
+2025-10-24 10:43:35,247 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:43:35] "[36mGET /frontend/style.css HTTP/1.1[0m" 304 -
+2025-10-24 10:44:13,874 - __main__ - INFO - 客户端已关闭
+2025-10-24 10:44:13,936 - __main__ - INFO - 客户端已关闭
+2025-10-24 10:44:15,824 - __main__ - INFO - 正在启动语音识别客户端...
+2025-10-24 10:44:15,865 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:5000
+2025-10-24 10:44:15,865 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-10-24 10:44:15,867 - werkzeug - INFO -  * Restarting with stat
+2025-10-24 10:44:16,518 - __main__ - INFO - 正在启动语音识别客户端...
+2025-10-24 10:44:16,547 - werkzeug - WARNING -  * Debugger is active!
+2025-10-24 10:44:16,551 - werkzeug - INFO -  * Debugger PIN: 695-787-789
+2025-10-24 10:45:00,551 - __main__ - INFO - 客户端已关闭
+2025-10-24 10:45:00,616 - __main__ - INFO - 客户端已关闭
+2025-10-24 10:45:02,360 - __main__ - INFO - 正在启动语音识别客户端...
+2025-10-24 10:45:02,405 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:5000
+2025-10-24 10:45:02,405 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-10-24 10:45:02,407 - werkzeug - INFO -  * Restarting with stat
+2025-10-24 10:45:03,061 - __main__ - INFO - 正在启动语音识别客户端...
+2025-10-24 10:45:03,090 - werkzeug - WARNING -  * Debugger is active!
+2025-10-24 10:45:03,095 - werkzeug - INFO -  * Debugger PIN: 695-787-789
+2025-10-24 10:45:06,544 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:45:06] "GET / HTTP/1.1" 200 -
+2025-10-24 10:45:06,692 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:45:06] "[36mGET /frontend/style.css HTTP/1.1[0m" 304 -
+2025-10-24 10:45:06,718 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:45:06] "GET /frontend/app.js HTTP/1.1" 200 -
+2025-10-24 10:45:06,729 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:45:06] "GET /api/status HTTP/1.1" 200 -
+2025-10-24 10:45:10,950 - backend.app - INFO - 客户端音频服务初始化成功
+2025-10-24 10:45:10,952 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:45:10] "GET /api/start_audio HTTP/1.1" 200 -
+2025-10-24 10:45:13,041 - backend.client_audio_service - INFO - 已连接到服务器: ws://localhost:8766
+2025-10-24 10:45:13,042 - backend.client_audio_service - INFO - 开始音频流传输到服务器
+2025-10-24 10:45:13,123 - backend.client_audio_service - INFO - 使用扬声器: 扬声器 (Realtek High Definition Audio)
+2025-10-24 10:45:41,485 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:45:41] "GET /api/stop_audio HTTP/1.1" 200 -
+2025-10-24 10:45:41,488 - backend.client_audio_service - INFO - 停止音频流传输
+2025-10-24 10:46:31,903 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:46:31] "GET / HTTP/1.1" 200 -
+2025-10-24 10:46:31,948 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:46:31] "[36mGET /frontend/style.css HTTP/1.1[0m" 304 -
+2025-10-24 10:46:31,959 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:46:31] "[36mGET /frontend/app.js HTTP/1.1[0m" 304 -
+2025-10-24 10:46:31,977 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:46:31] "GET /api/status HTTP/1.1" 200 -
+2025-10-24 10:46:32,758 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 10:46:32] "GET /api/start_audio HTTP/1.1" 200 -
+2025-10-24 10:46:32,759 - backend.client_audio_service - INFO - 开始音频流传输到服务器
+2025-10-24 10:46:32,765 - backend.client_audio_service - INFO - 使用扬声器: 扬声器 (Realtek High Definition Audio)
+2025-10-24 11:06:31,926 - werkzeug - INFO -  * Detected change in 'E:\\LMStydy\\LLM-Realtime-ASR\\realtime-asr-system-split\\client\\backend\\client_audio_service.py', reloading
+2025-10-24 11:06:31,927 - __main__ - INFO - 客户端已关闭
+2025-10-24 11:06:31,949 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-7' coro=<ClientAudioStreamService.capture_audio() done, defined at E:\LMStydy\LLM-Realtime-ASR\realtime-asr-system-split\client\backend\client_audio_service.py:146> wait_for=<Future pending cb=[_chain_future.<locals>._call_check_cancel() at D:\miniforge3\envs\asr\lib\asyncio\futures.py:385, Task.task_wakeup()]>>
+2025-10-24 11:06:32,031 - werkzeug - INFO -  * Restarting with stat
+2025-10-24 11:06:32,834 - __main__ - INFO - 正在启动语音识别客户端...
+2025-10-24 11:06:32,869 - werkzeug - WARNING -  * Debugger is active!
+2025-10-24 11:06:32,875 - werkzeug - INFO -  * Debugger PIN: 695-787-789
+2025-10-24 11:08:33,210 - werkzeug - INFO -  * Detected change in 'E:\\LMStydy\\LLM-Realtime-ASR\\realtime-asr-system-split\\client\\backend\\app.py', reloading
+2025-10-24 11:08:33,211 - __main__ - INFO - 客户端已关闭
+2025-10-24 11:08:33,276 - werkzeug - INFO -  * Restarting with stat
+2025-10-24 11:08:33,969 - __main__ - INFO - 正在启动语音识别客户端...
+2025-10-24 11:08:34,000 - werkzeug - WARNING -  * Debugger is active!
+2025-10-24 11:08:34,006 - werkzeug - INFO -  * Debugger PIN: 695-787-789
+2025-10-24 11:26:49,351 - __main__ - INFO - 客户端已关闭
+2025-10-24 11:26:49,472 - __main__ - INFO - 客户端已关闭
+2025-10-24 11:26:51,843 - __main__ - INFO - 正在启动语音识别客户端...
+2025-10-24 11:26:51,890 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:5000
+2025-10-24 11:26:51,891 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-10-24 11:26:51,893 - werkzeug - INFO -  * Restarting with stat
+2025-10-24 11:26:52,577 - __main__ - INFO - 正在启动语音识别客户端...
+2025-10-24 11:26:52,604 - werkzeug - WARNING -  * Debugger is active!
+2025-10-24 11:26:52,610 - werkzeug - INFO -  * Debugger PIN: 695-787-789
+2025-10-24 11:27:00,767 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 11:27:00] "GET / HTTP/1.1" 200 -
+2025-10-24 11:27:00,968 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 11:27:00] "[36mGET /frontend/style.css HTTP/1.1[0m" 304 -
+2025-10-24 11:27:00,994 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 11:27:00] "GET /frontend/app.js HTTP/1.1" 200 -
+2025-10-24 11:28:12,549 - werkzeug - INFO -  * Detected change in 'E:\\LMStydy\\LLM-Realtime-ASR\\realtime-asr-system-split\\client\\backend\\app.py', reloading
+2025-10-24 11:28:12,550 - __main__ - INFO - 客户端已关闭
+2025-10-24 11:28:12,607 - werkzeug - INFO -  * Restarting with stat
+2025-10-24 11:28:13,292 - __main__ - INFO - 正在启动语音识别客户端...
+2025-10-24 11:28:13,322 - werkzeug - WARNING -  * Debugger is active!
+2025-10-24 11:28:13,328 - werkzeug - INFO -  * Debugger PIN: 695-787-789
+2025-10-24 11:28:34,613 - werkzeug - INFO -  * Detected change in 'E:\\LMStydy\\LLM-Realtime-ASR\\realtime-asr-system-split\\client\\backend\\client_audio_service.py', reloading
+2025-10-24 11:28:34,615 - __main__ - INFO - 客户端已关闭
+2025-10-24 11:28:34,712 - werkzeug - INFO -  * Restarting with stat
+2025-10-24 11:28:35,486 - __main__ - INFO - 正在启动语音识别客户端...
+2025-10-24 11:28:35,513 - werkzeug - WARNING -  * Debugger is active!
+2025-10-24 11:28:35,518 - werkzeug - INFO -  * Debugger PIN: 695-787-789
+2025-10-24 11:30:25,801 - __main__ - INFO - 客户端已关闭
+2025-10-24 11:30:25,860 - __main__ - INFO - 客户端已关闭
+2025-10-24 11:30:28,412 - __main__ - INFO - 正在启动语音识别客户端...
+2025-10-24 11:30:28,456 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:5000
+2025-10-24 11:30:28,457 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-10-24 11:30:28,459 - werkzeug - INFO -  * Restarting with stat
+2025-10-24 11:30:29,111 - __main__ - INFO - 正在启动语音识别客户端...
+2025-10-24 11:30:29,140 - werkzeug - WARNING -  * Debugger is active!
+2025-10-24 11:30:29,147 - werkzeug - INFO -  * Debugger PIN: 695-787-789
+2025-10-24 11:30:32,021 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 11:30:32] "GET / HTTP/1.1" 200 -
+2025-10-24 11:30:32,171 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 11:30:32] "[36mGET /frontend/style.css HTTP/1.1[0m" 304 -
+2025-10-24 11:30:32,205 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 11:30:32] "GET /frontend/app.js HTTP/1.1" 200 -
+2025-10-24 11:30:32,214 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 11:30:32] "GET /api/status HTTP/1.1" 200 -
+2025-10-24 11:30:33,284 - backend.app - INFO - 客户端音频服务初始化成功
+2025-10-24 11:30:33,285 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 11:30:33] "GET /api/start_audio HTTP/1.1" 200 -
+2025-10-24 11:30:35,379 - backend.client_audio_service - INFO - 已连接到服务器: ws://localhost:8766
+2025-10-24 11:30:35,380 - backend.client_audio_service - INFO - 开始音频流传输到服务器
+2025-10-24 11:30:35,460 - backend.client_audio_service - INFO - 使用扬声器: 扬声器 (Realtek High Definition Audio)
+2025-10-24 11:33:52,313 - werkzeug - INFO -  * Detected change in 'E:\\LMStydy\\LLM-Realtime-ASR\\realtime-asr-system-split\\client\\backend\\app.py', reloading
+2025-10-24 11:33:52,315 - __main__ - INFO - 客户端已关闭
+2025-10-24 11:33:52,399 - werkzeug - INFO -  * Restarting with stat
+2025-10-24 11:33:53,109 - __main__ - INFO - 正在启动语音识别客户端...
+2025-10-24 11:33:53,141 - werkzeug - WARNING -  * Debugger is active!
+2025-10-24 11:33:53,149 - werkzeug - INFO -  * Debugger PIN: 695-787-789
+2025-10-24 11:34:10,377 - werkzeug - INFO -  * Detected change in 'E:\\LMStydy\\LLM-Realtime-ASR\\realtime-asr-system-split\\client\\client_run.py', reloading
+2025-10-24 11:34:10,377 - __main__ - INFO - 客户端已关闭
+2025-10-24 11:34:10,438 - werkzeug - INFO -  * Restarting with stat
+2025-10-24 11:34:10,504 - __main__ - INFO - 客户端已关闭
+2025-10-24 11:38:44,690 - backend.app - INFO - 客户端音频服务初始化成功
+2025-10-24 11:38:44,693 - __main__ - INFO - 正在启动语音识别客户端...
+2025-10-24 11:38:44,739 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:5000
+2025-10-24 11:38:44,739 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-10-24 11:38:44,741 - werkzeug - INFO -  * Restarting with stat
+2025-10-24 11:38:45,456 - backend.app - INFO - 客户端音频服务初始化成功
+2025-10-24 11:38:45,458 - __main__ - INFO - 正在启动语音识别客户端...
+2025-10-24 11:38:45,489 - werkzeug - WARNING -  * Debugger is active!
+2025-10-24 11:38:45,496 - werkzeug - INFO -  * Debugger PIN: 695-787-789
+2025-10-24 11:38:49,486 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 11:38:49] "GET / HTTP/1.1" 200 -
+2025-10-24 11:38:49,648 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 11:38:49] "[36mGET /frontend/style.css HTTP/1.1[0m" 304 -
+2025-10-24 11:38:49,649 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 11:38:49] "[36mGET /frontend/app.js HTTP/1.1[0m" 304 -
+2025-10-24 11:38:49,660 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 11:38:49] "GET /api/status HTTP/1.1" 200 -
+2025-10-24 11:38:53,204 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 11:38:53] "GET /api/start_audio HTTP/1.1" 200 -
+2025-10-24 11:38:55,280 - backend.client_audio_service - INFO - 已连接到服务器: ws://localhost:8766
+2025-10-24 11:38:55,280 - backend.client_audio_service - INFO - 开始音频流传输到服务器
+2025-10-24 11:38:55,369 - backend.client_audio_service - INFO - 使用扬声器: 扬声器 (Realtek High Definition Audio)
+2025-10-24 11:39:35,198 - __main__ - INFO - 客户端已关闭
+2025-10-24 11:39:35,260 - __main__ - INFO - 客户端已关闭
+2025-10-24 12:39:39,696 - __main__ - INFO - 启动客户端服务...
+2025-10-24 12:39:39,697 - __main__ - INFO - Flask 应用已启动: http://localhost:5000
+2025-10-24 12:39:39,699 - __main__ - INFO - 启动客户端 WebSocket 服务器在 localhost:8600
+2025-10-24 12:39:39,772 - websockets.server - INFO - server listening on [::1]:8600
+2025-10-24 12:39:39,773 - websockets.server - INFO - server listening on 127.0.0.1:8600
+2025-10-24 12:39:39,773 - __main__ - INFO - 客户端 WebSocket 服务器已启动，等待前端连接...
+2025-10-24 12:39:39,984 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:5000
+2025-10-24 12:39:39,985 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-10-24 12:39:44,618 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 12:39:44] "GET / HTTP/1.1" 200 -
+2025-10-24 12:39:44,778 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 12:39:44] "GET /frontend/style.css HTTP/1.1" 200 -
+2025-10-24 12:39:44,885 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 12:39:44] "GET /frontend/app.js HTTP/1.1" 200 -
+2025-10-24 12:39:44,895 - websockets.server - INFO - connection open
+2025-10-24 12:39:44,896 - __main__ - INFO - 前端客户端连接: ::1:50803
+2025-10-24 12:40:02,789 - backend.client_audio_service - ERROR - 连接服务器失败: timed out during opening handshake
+2025-10-24 12:41:07,081 - websockets.server - INFO - server closing
+2025-10-24 12:41:07,082 - websockets.server - INFO - server closed
+2025-10-24 12:41:09,703 - __main__ - INFO - 启动客户端服务...
+2025-10-24 12:41:09,704 - __main__ - INFO - Flask 应用已启动: http://localhost:5000
+2025-10-24 12:41:09,707 - __main__ - INFO - 启动客户端 WebSocket 服务器在 localhost:8600
+2025-10-24 12:41:09,818 - websockets.server - INFO - server listening on 127.0.0.1:8600
+2025-10-24 12:41:09,822 - websockets.server - INFO - server listening on [::1]:8600
+2025-10-24 12:41:09,822 - __main__ - INFO - 客户端 WebSocket 服务器已启动，等待前端连接...
+2025-10-24 12:41:09,885 - websockets.server - INFO - connection open
+2025-10-24 12:41:09,886 - __main__ - INFO - 前端客户端连接: ::1:51150
+2025-10-24 12:41:10,046 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:5000
+2025-10-24 12:41:10,047 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-10-24 12:41:12,940 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 12:41:12] "GET / HTTP/1.1" 200 -
+2025-10-24 12:41:13,106 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 12:41:13] "[36mGET /frontend/style.css HTTP/1.1[0m" 304 -
+2025-10-24 12:41:13,142 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 12:41:13] "[36mGET /frontend/app.js HTTP/1.1[0m" 304 -
+2025-10-24 12:41:13,151 - websockets.server - INFO - connection open
+2025-10-24 12:41:13,152 - __main__ - INFO - 前端客户端连接: ::1:51161
+2025-10-24 12:41:14,504 - backend.client_audio_service - INFO - 已连接到服务器: ws://127.0.0.1:8756
+2025-10-24 12:41:14,505 - backend.client_audio_service - INFO - 客户端 ::1:51161 系统音频推流开始
+2025-10-24 12:41:14,601 - backend.client_audio_service - INFO - 客户端 ::1:51161 使用扬声器: 扬声器 (Realtek High Definition Audio)
+2025-10-24 12:42:04,519 - backend.client_audio_service - ERROR - 接收服务器消息失败: received 1011 (internal error) keepalive ping timeout; then sent 1011 (internal error) keepalive ping timeout
+2025-10-24 12:42:57,128 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 12:42:57] "GET / HTTP/1.1" 200 -
+2025-10-24 12:42:57,136 - backend.client_audio_service - INFO - 客户端 ::1:51161 的系统音频流已停止
+2025-10-24 12:42:57,170 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 12:42:57] "[36mGET /frontend/style.css HTTP/1.1[0m" 304 -
+2025-10-24 12:42:57,173 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 12:42:57] "[36mGET /frontend/app.js HTTP/1.1[0m" 304 -
+2025-10-24 12:42:57,186 - websockets.server - INFO - connection open
+2025-10-24 12:42:57,187 - __main__ - INFO - 前端客户端连接: ::1:51338
+2025-10-24 12:43:02,801 - backend.client_audio_service - INFO - 已连接到服务器: ws://127.0.0.1:8756
+2025-10-24 12:43:02,802 - backend.client_audio_service - INFO - 客户端 ::1:51338 系统音频推流开始
+2025-10-24 12:43:02,806 - backend.client_audio_service - INFO - 客户端 ::1:51338 使用扬声器: 扬声器 (Realtek High Definition Audio)
+2025-10-24 12:43:51,907 - backend.client_audio_service - INFO - 客户端 ::1:51338 的系统音频流已停止
+2025-10-24 12:43:51,908 - websockets.server - INFO - server closing
+2025-10-24 12:43:51,908 - websockets.server - INFO - server closed
+2025-10-24 14:14:02,976 - __main__ - INFO - 启动客户端服务...
+2025-10-24 14:14:02,977 - __main__ - INFO - Flask 应用已启动: http://localhost:5000
+2025-10-24 14:14:02,979 - __main__ - INFO - 启动客户端 WebSocket 服务器在 localhost:8600
+2025-10-24 14:14:03,073 - websockets.server - INFO - server listening on [::1]:8600
+2025-10-24 14:14:03,074 - websockets.server - INFO - server listening on 127.0.0.1:8600
+2025-10-24 14:14:03,074 - __main__ - INFO - 客户端 WebSocket 服务器已启动，等待前端连接...
+2025-10-24 14:14:03,257 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:5000
+2025-10-24 14:14:03,257 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-10-24 14:14:43,217 - websockets.server - INFO - connection open
+2025-10-24 14:14:43,218 - __main__ - INFO - 前端客户端连接: ::1:57877
+2025-10-24 14:14:45,185 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 14:14:45] "GET / HTTP/1.1" 200 -
+2025-10-24 14:14:45,389 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 14:14:45] "[36mGET /frontend/style.css HTTP/1.1[0m" 304 -
+2025-10-24 14:14:45,421 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 14:14:45] "GET /frontend/app.js HTTP/1.1" 200 -
+2025-10-24 14:16:32,423 - websockets.server - INFO - server closing
+2025-10-24 14:16:32,424 - websockets.server - INFO - server closed
+2025-10-24 14:16:34,151 - __main__ - INFO - 启动客户端服务...
+2025-10-24 14:16:34,152 - __main__ - INFO - Flask 应用已启动: http://localhost:5000
+2025-10-24 14:16:34,153 - __main__ - INFO - 启动客户端 WebSocket 服务器在 localhost:8600
+2025-10-24 14:16:34,239 - websockets.server - INFO - server listening on [::1]:8600
+2025-10-24 14:16:34,240 - websockets.server - INFO - server listening on 127.0.0.1:8600
+2025-10-24 14:16:34,240 - __main__ - INFO - 客户端 WebSocket 服务器已启动，等待前端连接...
+2025-10-24 14:16:34,394 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:5000
+2025-10-24 14:16:34,395 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-10-24 14:16:37,776 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 14:16:37] "GET / HTTP/1.1" 200 -
+2025-10-24 14:16:37,933 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 14:16:37] "[36mGET /frontend/style.css HTTP/1.1[0m" 304 -
+2025-10-24 14:16:37,965 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 14:16:37] "GET /frontend/app.js HTTP/1.1" 200 -
+2025-10-24 14:16:37,973 - websockets.server - INFO - connection open
+2025-10-24 14:16:37,974 - __main__ - INFO - 前端客户端连接: 127.0.0.1:58168
+2025-10-24 14:16:39,540 - backend.client_audio_service - ERROR - 连接服务器失败: type object 'ClientConfig' has no attribute 'SERVER_WS_HOST'
+2025-10-24 14:17:55,950 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 14:17:55] "GET / HTTP/1.1" 200 -
+2025-10-24 14:17:56,003 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 14:17:56] "[36mGET /frontend/style.css HTTP/1.1[0m" 304 -
+2025-10-24 14:17:56,007 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 14:17:56] "[36mGET /frontend/app.js HTTP/1.1[0m" 304 -
+2025-10-24 14:17:56,040 - websockets.server - INFO - connection open
+2025-10-24 14:17:56,041 - __main__ - INFO - 前端客户端连接: 127.0.0.1:58353
+2025-10-24 14:17:57,026 - backend.client_audio_service - ERROR - 连接服务器失败: type object 'ClientConfig' has no attribute 'SERVER_WS_HOST'
+2025-10-24 14:18:00,677 - websockets.server - INFO - server closing
+2025-10-24 14:18:00,678 - websockets.server - INFO - server closed
