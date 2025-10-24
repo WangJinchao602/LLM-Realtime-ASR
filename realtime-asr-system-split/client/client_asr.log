@@ -322,3 +322,26 @@ task: <Task pending name='Task-7' coro=<ClientAudioStreamService.capture_audio()
 2025-10-24 14:17:57,026 - backend.client_audio_service - ERROR - 连接服务器失败: type object 'ClientConfig' has no attribute 'SERVER_WS_HOST'
 2025-10-24 14:18:00,677 - websockets.server - INFO - server closing
 2025-10-24 14:18:00,678 - websockets.server - INFO - server closed
+2025-10-24 14:18:02,845 - __main__ - INFO - 启动客户端服务...
+2025-10-24 14:18:02,846 - __main__ - INFO - Flask 应用已启动: http://localhost:5000
+2025-10-24 14:18:02,848 - __main__ - INFO - 启动客户端 WebSocket 服务器在 localhost:8600
+2025-10-24 14:18:02,935 - websockets.server - INFO - server listening on 127.0.0.1:8600
+2025-10-24 14:18:02,937 - websockets.server - INFO - server listening on [::1]:8600
+2025-10-24 14:18:02,938 - __main__ - INFO - 客户端 WebSocket 服务器已启动，等待前端连接...
+2025-10-24 14:18:03,091 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:5000
+2025-10-24 14:18:03,093 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-10-24 14:18:03,224 - websockets.server - INFO - connection open
+2025-10-24 14:18:03,225 - __main__ - INFO - 前端客户端连接: 127.0.0.1:58378
+2025-10-24 14:18:09,217 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 14:18:09] "GET / HTTP/1.1" 200 -
+2025-10-24 14:18:09,359 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 14:18:09] "[36mGET /frontend/style.css HTTP/1.1[0m" 304 -
+2025-10-24 14:18:09,360 - werkzeug - INFO - 127.0.0.1 - - [24/Oct/2025 14:18:09] "[36mGET /frontend/app.js HTTP/1.1[0m" 304 -
+2025-10-24 14:18:09,379 - websockets.server - INFO - connection open
+2025-10-24 14:18:09,380 - __main__ - INFO - 前端客户端连接: 127.0.0.1:58398
+2025-10-24 14:18:10,659 - backend.client_audio_service - INFO - 已连接到服务器: ws://127.0.0.1:8756
+2025-10-24 14:18:10,660 - backend.client_audio_service - INFO - 客户端 127.0.0.1:58398 系统音频推流开始
+2025-10-24 14:18:10,772 - backend.client_audio_service - INFO - 客户端 127.0.0.1:58398 使用扬声器: 扬声器 (Realtek High Definition Audio)
+2025-10-24 14:18:37,120 - backend.client_audio_service - INFO - 客户端 127.0.0.1:58398 的系统音频流已停止
+2025-10-24 14:21:42,672 - backend.client_audio_service - INFO - 客户端 127.0.0.1:58398 系统音频推流开始
+2025-10-24 14:21:42,676 - backend.client_audio_service - INFO - 客户端 127.0.0.1:58398 使用扬声器: 扬声器 (Realtek High Definition Audio)
+2025-10-24 14:21:58,334 - backend.client_audio_service - INFO - 客户端 127.0.0.1:58398 的系统音频流已停止
