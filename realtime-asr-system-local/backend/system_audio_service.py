@@ -19,23 +19,52 @@ class SystemAudioService:
     
     def __init__(self):
         self.active_streams: Dict[str, dict] = {}  # client_id -> stream_info
-        self.sample_rate = 16000
-        self.buffer_duration = 2.0  # 2秒缓冲区
+        self.sample_rate = Config.SAMPLE_RATE
+        self.buffer_duration = Config.CHUNK_DURATION  # 1秒缓冲区
+        self.sample_original = Config.SAMPLE_ORIGINAL  # 44100Hz × 1s = 44100样本 修改chunk_size为1秒的原始音频数据
         self.buffer_size = int(self.buffer_duration * self.sample_rate)
         
     def encode_wav(self, audio_data: np.ndarray) -> bytes:
-        """将音频数据编码为WAV格式"""
-        # 转换为16位PCM
+    #     """将音频数据编码为WAV格式"""
+    #     # 转换为16位PCM
+    #     pcm_data = (audio_data * 0x7fff).astype(np.int16)
+        
+    #     # 创建WAV数据
+    #     wav_data = bytearray(len(pcm_data) * 2)
+        
+    #     # 填充音频数据
+    #     for i in range(len(pcm_data)):
+    #         struct.pack_into('<h', wav_data, i * 2, pcm_data[i])
+            
+    #     return bytes(wav_data)
+        """生成完整的WAV文件（包含文件头）"""
         pcm_data = (audio_data * 0x7fff).astype(np.int16)
         
-        # 创建WAV数据
-        wav_data = bytearray(len(pcm_data) * 2)
+        # WAV文件头
+        riff_chunk = b'RIFF'
+        file_size = len(pcm_data) * 2 + 36  # 数据大小 + 头部大小
+        wave_format = b'WAVE'
+        fmt_chunk = b'fmt '
+        fmt_size = 16
+        audio_format = 1  # PCM
+        num_channels = 1   # 单声道
+        sample_rate = self.sample_rate
+        byte_rate = sample_rate * num_channels * 2  # 每秒字节数
+        block_align = num_channels * 2
+        bits_per_sample = 16
+        data_chunk = b'data'
+        data_size = len(pcm_data) * 2
         
-        # 填充音频数据
-        for i in range(len(pcm_data)):
-            struct.pack_into('<h', wav_data, i * 2, pcm_data[i])
-            
-        return bytes(wav_data)
+        # 构建完整的WAV文件
+        wav_header = struct.pack(
+            '<4sI4s4sIHHIIHH4sI',
+            riff_chunk, file_size, wave_format,
+            fmt_chunk, fmt_size, audio_format, num_channels,
+            sample_rate, byte_rate, block_align, bits_per_sample,
+            data_chunk, data_size
+        )
+        
+        return wav_header + pcm_data.tobytes()
     
     async def start_streaming(self, websocket, client_id: str):
         """开始系统音频流"""
@@ -94,10 +123,10 @@ class SystemAudioService:
             
             # 创建环回录音器
             with sc.get_microphone(id=str(speaker.name), include_loopback=True).recorder(
-                samplerate=44100, channels=1
+                samplerate=self.sample_original, channels=1
             ) as recorder:
                 
-                chunk_size = 1764  # 40ms at 44100Hz
+                chunk_size = self.sample_original * 0.04  # 40ms at 44100Hz
                 
                 while (client_id in self.active_streams and 
                        stream_info['is_streaming']):
@@ -109,8 +138,8 @@ class SystemAudioService:
                     # 重采样到16kHz
                     data = soxr.resample(
                         data,
-                        44100,  # 原始采样率
-                        16000,  # 目标采样率
+                        self.sample_original,  # 原始采样率
+                        self.sample_rate,  # 目标采样率
                         quality=soxr.HQ
                     )
                     
