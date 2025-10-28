@@ -47,6 +47,41 @@ SystemAudioService（系统音频服务）
 
 ✅ WebSocket通信
 
+**2025-10-28更新**
+由于Qwen3-Omni模型不支持PCM数据格式，需将PCM数据转换为完整WAV格式。
+
+```python
+"""生成完整的WAV文件（包含文件头）"""
+        pcm_data = (audio_data * 0x7fff).astype(np.int16)
+        
+        # WAV文件头
+        riff_chunk = b'RIFF'
+        file_size = len(pcm_data) * 2 + 36  # 数据大小 + 头部大小
+        wave_format = b'WAVE'
+        fmt_chunk = b'fmt '
+        fmt_size = 16
+        audio_format = 1  # PCM
+        num_channels = 1   # 单声道
+        sample_rate = self.sample_rate
+        byte_rate = sample_rate * num_channels * 2  # 每秒字节数
+        block_align = num_channels * 2
+        bits_per_sample = 16
+        data_chunk = b'data'
+        data_size = len(pcm_data) * 2
+        
+        # 构建完整的WAV文件
+        wav_header = struct.pack(
+            '<4sI4s4sIHHIIHH4sI',
+            riff_chunk, file_size, wave_format,
+            fmt_chunk, fmt_size, audio_format, num_channels,
+            sample_rate, byte_rate, block_align, bits_per_sample,
+            data_chunk, data_size
+        )
+        
+        return wav_header + pcm_data.tobytes()
+```
+
+
 
 ## realtime-asr-system-split
 **2025-10-24更新**
