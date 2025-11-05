@@ -8,8 +8,10 @@ import soundcard as sc
 import numpy as np
 import soxr
 import struct
+import webrtcvad
+from collections import deque
 from datetime import datetime
-from typing import Dict, Optional
+from typing import Dict, Optional, List
 from config.config import Config
 
 logger = logging.getLogger(__name__)
@@ -19,24 +21,23 @@ class SystemAudioService:
     
     def __init__(self):
         self.active_streams: Dict[str, dict] = {}  # client_id -> stream_info
-        self.sample_rate = Config.SAMPLE_RATE
-        self.buffer_duration = Config.CHUNK_DURATION  # 1秒缓冲区
-        self.sample_original = Config.SAMPLE_ORIGINAL  # 44100Hz × 1s = 44100样本 修改chunk_size为1秒的原始音频数据
-        self.buffer_size = int(self.buffer_duration * self.sample_rate)
+        self.sample_rate = Config.SAMPLE_RATE  # 16000Hz
+        self.sample_original = Config.SAMPLE_ORIGINAL  # 44100Hz
+        self.frame_duration = 0.02 # 每帧 0.02s
+        self.frame_size = int(self.frame_duration * self.sample_original)  # 每帧样本数
+        
+        # VAD 配置
+        self.vad = webrtcvad.Vad(2)  # 中等敏感度 (0-3, 3最严格)
+        self.vad_sample_rate = self.sample_rate  # 使用ASR采样率 16000Hz
+        self.vad_frame_duration = 0.02  # 20ms帧，VAD要求10, 20 or 30ms
+        self.vad_frame_size = int(self.vad_sample_rate * self.vad_frame_duration)  # 320 samples
+             
+        # 语音活动检测参数
+        # self.speech_threshold = 0.6  # 语音检测阈值 语音能量阈值
+        self.silence_threshold = 0.5  # 静音检测阈值（秒）
+        self.min_speech_duration = 0.01  # 最小语音持续时间（秒）
         
     def encode_wav(self, audio_data: np.ndarray) -> bytes:
-    #     """将音频数据编码为WAV格式"""
-    #     # 转换为16位PCM
-    #     pcm_data = (audio_data * 0x7fff).astype(np.int16)
-        
-    #     # 创建WAV数据
-    #     wav_data = bytearray(len(pcm_data) * 2)
-        
-    #     # 填充音频数据
-    #     for i in range(len(pcm_data)):
-    #         struct.pack_into('<h', wav_data, i * 2, pcm_data[i])
-            
-    #     return bytes(wav_data)
         """生成完整的WAV文件（包含文件头）"""
         pcm_data = (audio_data * 0x7fff).astype(np.int16)
         
@@ -77,8 +78,12 @@ class SystemAudioService:
             'websocket': websocket,
             'client_id': client_id,
             'is_streaming': True,
-            'audio_buffer': np.zeros(self.buffer_size, dtype=np.float32),
-            'buffer_ptr': 0
+            'audio_queue': deque(),  # 音频数据队列
+            'is_speaking': False,    # 是否在说话状态
+            'speech_start_time': None,  # 语音开始时间
+            'silence_start_time': None, # 静音开始时间
+            'current_audio_chunk': [],  # 当前音频块
+            'vad_buffer': np.array([], dtype=np.float32)  # VAD处理缓冲区
         }
         
         self.active_streams[client_id] = stream_info
@@ -108,8 +113,38 @@ class SystemAudioService:
             del self.active_streams[client_id]
             logger.info(f"客户端 {client_id} 的系统音频流已停止")
     
+    def prepare_vad_frame(self, audio_data: np.ndarray) -> bytes:
+        """准备VAD帧数据（16kHz, 16bit PCM）"""
+        # 转换为16位PCM
+        pcm_data = (audio_data * 0x7fff).astype(np.int16)
+        return pcm_data.tobytes()
+    
+    def detect_speech_activity(self, stream_info: dict, audio_data: np.ndarray) -> bool:
+        """检测语音活动"""
+        try:
+            # 添加到VAD缓冲区
+            stream_info['vad_buffer'] = np.concatenate([stream_info['vad_buffer'], audio_data])
+            
+            # 如果缓冲区足够处理一帧VAD
+            if len(stream_info['vad_buffer']) >= self.vad_frame_size:
+                # 取一帧数据进行VAD检测
+                frame = stream_info['vad_buffer'][:self.vad_frame_size]
+                stream_info['vad_buffer'] = stream_info['vad_buffer'][self.vad_frame_size:]
+                
+                # 准备VAD帧
+                vad_frame = self.prepare_vad_frame(frame)
+                
+                # 使用VAD检测语音
+                is_speech = self.vad.is_speech(vad_frame, self.vad_sample_rate)
+                return is_speech
+                
+        except Exception as e:
+            logger.error(f"VAD检测错误: {e}")
+            
+        return False
+    
     async def capture_audio(self, client_id: str):
-        """为特定客户端捕获系统音频"""
+        """为特定客户端捕获系统音频（带VAD检测）"""
         if client_id not in self.active_streams:
             return
             
@@ -126,7 +161,7 @@ class SystemAudioService:
                 samplerate=self.sample_original, channels=1
             ) as recorder:
                 
-                chunk_size = self.sample_original * 0.04  # 40ms at 44100Hz
+                chunk_size = self.frame_size  # 20ms at 44100Hz
                 
                 while (client_id in self.active_streams and 
                        stream_info['is_streaming']):
@@ -135,21 +170,50 @@ class SystemAudioService:
                     data = await asyncio.to_thread(recorder.record, chunk_size)
                     data = data.reshape(-1)
                     
-                    # 重采样到16kHz
-                    data = soxr.resample(
+                    # 重采样到16kHz（用于ASR和VAD）
+                    data_resampled = soxr.resample(
                         data,
-                        self.sample_original,  # 原始采样率
-                        self.sample_rate,  # 目标采样率
+                        self.sample_original,  # 原始采样率 44100Hz
+                        self.vad_sample_rate,  # 目标采样率 16000Hz
                         quality=soxr.HQ
                     )
                     
-                    # 写入缓冲区
-                    self.write_to_buffer(stream_info, data)
+                    # 检测语音活动
+                    is_speech = self.detect_speech_activity(stream_info, data_resampled)
+                    current_time = datetime.now()
                     
-                    # 检查是否需要发送数据
-                    if stream_info['buffer_ptr'] >= self.buffer_size:
-                        await self.send_audio_chunk(stream_info)
+                    if is_speech:
+                        # 检测到语音
+                        if not stream_info['is_speaking']:
+                            # 语音开始
+                            stream_info['is_speaking'] = True
+                            stream_info['speech_start_time'] = current_time
+                            stream_info['silence_start_time'] = None
+                            logger.debug(f"客户端 {client_id} 检测到语音开始")
                         
+                        # 将音频数据添加到当前块
+                        stream_info['current_audio_chunk'].append(data_resampled)
+                        
+                    else:
+                        # 没有检测到语音
+                        if stream_info['is_speaking']:
+                            # 在说话状态但当前帧没有语音
+                            if stream_info['silence_start_time'] is None:
+                                stream_info['silence_start_time'] = current_time
+                            
+                            # 计算静音持续时间
+                            silence_duration = (current_time - stream_info['silence_start_time']).total_seconds()
+                            
+                            if silence_duration >= self.silence_threshold:
+                                # 静音时间达到阈值，结束当前语音段
+                                await self.finalize_audio_chunk(stream_info)
+                            else:
+                                # 仍在静音检测期内，继续收集音频
+                                stream_info['current_audio_chunk'].append(data_resampled)
+                        else:
+                            # 不在说话状态，忽略静音帧
+                            pass
+                            
         except Exception as e:
             logger.error(f"客户端 {client_id} 音频捕获错误: {e}")
             if client_id in self.active_streams:
@@ -164,44 +228,36 @@ class SystemAudioService:
                 except:
                     pass
     
-    def write_to_buffer(self, stream_info: dict, data: np.ndarray):
-        """写入数据到音频缓冲区"""
-        n = len(data)
-        buffer_ptr = stream_info['buffer_ptr']
-        audio_buffer = stream_info['audio_buffer']
-        
-        if buffer_ptr + n <= self.buffer_size:
-            audio_buffer[buffer_ptr:buffer_ptr + n] = data
-            stream_info['buffer_ptr'] += n
-        else:
-            remaining = self.buffer_size - buffer_ptr
-            audio_buffer[buffer_ptr:] = data[:remaining]
-            stream_info['buffer_ptr'] = self.buffer_size
-    
-    async def send_audio_chunk(self, stream_info: dict):
-        """发送音频数据块 - 直接调用ASR服务"""
-        if (stream_info['buffer_ptr'] == self.buffer_size and 
-            stream_info['is_streaming']):
+    async def finalize_audio_chunk(self, stream_info: dict):
+        """完成当前音频块的处理"""
+        if not stream_info['current_audio_chunk']:
+            return
             
-            try:
-                # 编码音频数据
-                wav_data = self.encode_wav(stream_info['audio_buffer'])
-                
-                # 直接调用ASR服务处理音频
-                await self.process_audio_with_asr(stream_info, wav_data)
-                
-                # 重置缓冲区
-                stream_info['audio_buffer'] = np.zeros(self.buffer_size, dtype=np.float32)
-                stream_info['buffer_ptr'] = 0
-                
-            except Exception as e:
-                logger.error(f"处理音频数据失败: {e}")
-                stream_info['is_streaming'] = False
+        # 合并所有音频数据
+        combined_audio = np.concatenate(stream_info['current_audio_chunk'])
+        
+        # 检查音频持续时间是否满足最小要求
+        audio_duration = len(combined_audio) / self.vad_sample_rate
+        if audio_duration >= self.min_speech_duration:
+            # 发送音频数据进行ASR处理
+            await self.process_audio_with_asr(stream_info, combined_audio)
+        else:
+            logger.debug(f"音频段过短 ({audio_duration:.2f}s)，跳过ASR处理")
+        
+        # 重置状态
+        stream_info['is_speaking'] = False
+        stream_info['speech_start_time'] = None
+        stream_info['silence_start_time'] = None
+        stream_info['current_audio_chunk'] = []
+        stream_info['vad_buffer'] = np.array([], dtype=np.float32)
     
-    async def process_audio_with_asr(self, stream_info: dict, audio_data: bytes):
+    async def process_audio_with_asr(self, stream_info: dict, audio_data: np.ndarray):
         """使用ASR服务处理音频数据"""
         try:
-            logger.debug(f"调用ASR服务处理音频，数据长度: {len(audio_data)} 字节")
+            logger.debug(f"调用ASR服务处理音频，数据长度: {len(audio_data)} 样本，持续时间: {len(audio_data)/self.sample_rate:.2f}s")
+            
+            # 编码音频数据
+            wav_data = self.encode_wav(audio_data)
             
             # 导入ASR服务
             from backend.asr_service import qwen_asr_service
@@ -211,7 +267,7 @@ class SystemAudioService:
             result = await loop.run_in_executor(
                 None,  # 使用默认线程池
                 qwen_asr_service.recognize_speech,
-                audio_data
+                wav_data
             )
             
             logger.debug(f"ASR服务返回结果: {result}")

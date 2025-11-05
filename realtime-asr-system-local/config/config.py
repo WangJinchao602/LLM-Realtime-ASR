@@ -49,7 +49,7 @@ class Config:
     MAX_AUDIO_SIZE = 10 * 1024 * 1024  # 10MB
     SAMPLE_ORIGINAL = 44100 # 44.1kHz
     SAMPLE_RATE = 16000 # 16kHz
-    CHUNK_DURATION = 2.0  # 每1秒处理一次
+    CHUNK_DURATION = 2.0  # 每2秒处理一次
     
     # 日志配置
     LOG_LEVEL = 'INFO'

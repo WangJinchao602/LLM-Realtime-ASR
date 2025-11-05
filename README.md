@@ -81,7 +81,9 @@ SystemAudioService（系统音频服务）
         return wav_header + pcm_data.tobytes()
 ```
 
-
+**2025-11-05更新**
+增加VAD（Voice Activity Detection）检测功能
+使用webrtcvad将一段音频数据分类为浊音或无浊音，从而标识语音活动start和end
 
 ## realtime-asr-system-split
 **2025-10-24更新**
@@ -92,5 +94,3 @@ SystemAudioService（系统音频服务）
 2. 服务器WebSocket → ASR服务 → 识别结果
 
 3. 识别结果 → 服务器WebSocket → 本地客户端WebSocket → 前端
-
-
